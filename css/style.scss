@@ -1,0 +1,248 @@
+/* ==========================================================================
+   CSS Imports
+   ========================================================================== */
+@import "normalize"; 
+@import "foundation";
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* =====================================
+   SASS Stuff
+   ===================================== */
+// Variables
+
+$primary: #56524E; /*Dark Grey*/
+$secondary: #a7a7a7; /*Light Grey*/
+$tertiary: #e2001a; /*Red*/
+$quaternary: #A30006; /*Burgundy*/
+$quinary: #d2d2d2; /*Lightish Grey*/
+
+/* =====================================
+   Site Styles
+   ===================================== */
+body {
+  font-size: 18px/26px; 
+  font-family: "Lucida Grande",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  color: $primary;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "BlissPro-Heavy",Impact,sans-serif;
+  color: $primary;
+  margin-bottom: .2em;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.4;
+}
+
+a {
+  color: $tertiary;
+
+  &:hover, &:focus {
+    color: $secondary;
+  }
+}
+
+.subheader {
+  font: 18px/26px "Lucida Grande",Helvetica,Arial,sans-serif;
+  color: $secondary;
+}
+
+.top {
+  .row {
+    padding: 0;
+  }
+}
+
+
+.row {
+  padding: 1em 0;
+}
+
+.name {
+  font-size: 1.3em;
+  color: #fff;
+  background: $tertiary;
+  text-transform: uppercase;
+}
+
+.top-bar {
+  background: #fff;
+  .name h1 a {
+    width: 100%;
+  }
+}
+
+.bottom {
+  background: #f7f6f6;
+  min-height: 250px;
+}
+
+.nav {
+  margin: 2em auto;
+  li a {
+    padding: .8em;
+    background: rgba(255, 255, 255, 0.85);
+    color: $tertiary;
+    font-family: "BlissPro-Bold",Impact,sans-serif;
+
+    &:hover, &:focus {
+      background: $secondary;
+      color: #fff;
+    }
+  }
+}
+
+.top-bar-section {
+  ul {
+    background: $primary;
+    li a {
+      background: none;
+    }
+  }
+}
+
+.button {
+  border-width: 0px 0px 4px;
+  border-style: solid;
+  border-color: $quaternary;
+  background-color: $tertiary;
+  color: white;
+
+  &:hover, &:focus {
+    background-color: $quaternary;
+  }
+}
+
+ul.pagination li.current a {
+  background: $tertiary;
+    &:hover, &:focus {
+      background: $quaternary;
+      cursor: pointer;
+    }
+  }
+
+.footer {
+  background: $tertiary;
+  color: #fff;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+/* =====================================
+   Page Styles
+   ===================================== */
+
+.banner-home {
+  background: url(../img/index/banner.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-about {
+  background: url(../img/banner2.png) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-directory {
+  background: url(../img/banner3.png) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-projects {
+  background: url(../img/banner4.png) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-support {
+  background: url(../img/banner5.png) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-news {
+  background: url(../img/banner6.png) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-resources {
+  background: url(../img/banner7.png) no-repeat center center;
+  background-size: cover;
+}
+
+.banner-it {
+  background: url(../img/banner8.png) no-repeat center center;
+  background-size: cover;
+}
+
+/* ==========================================================================
+   Media Queries for Responsive Design
+   ========================================================================== */
+
+/* Mobile phones in landscape or smaller tablets */
+@media screen and (min-width: 28.75em) {
+
+  
+
+}
+
+/* Medium tablets and up */
+@media screen and (min-width: 40.5em) {
+  
+  h2 {
+    font-size: 1.6em;
+  }
+
+  .nav li a {
+  position: relative;
+  overflow: hidden;
+  
+    &:hover {
+      &:before {
+        left: 90%;
+      }
+    }
+
+    &:before {
+    position: absolute;
+    font-size: 125%;
+    line-height: 2.9;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    left: 130%;
+    top: 0;
+    content: url(../img/arrow-staff.png);
+    }
+  }
+
+  .top {
+    padding: 2em 0;
+  }
+
+  .top-bar-section li a:not(.button) {
+    color: $primary;
+    background: #fff;
+      
+      &:hover {
+        background: #fff;
+        color: $tertiary;
+      }
+  }
+  
+
+}
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
