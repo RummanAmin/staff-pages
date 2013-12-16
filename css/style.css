@@ -5181,7 +5181,14 @@ ul.pagination li.current a {
 .blog .row {
   box-shadow: 0px 1px 8px 1px #e4e4e4;
   border: 1px #e4e4e4 solid;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  padding: 0; }
+  .blog .row .columns:first-of-type {
+    padding: 0; }
+  .blog .row .columns:last-of-type {
+    padding-top: .5em; }
+.blog p.right {
+  margin-bottom: 0; }
 
 /* =====================================
    Page Styles
