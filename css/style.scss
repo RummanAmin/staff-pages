@@ -35,6 +35,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "BlissPro-Heavy",Impact,sans-serif;
   color: $primary;
   margin-bottom: .2em;
+
+  a {
+    color: $primary;
+    &:hover, &:focus {
+      color: $tertiary;
+    }
+  }
 }
 
 h2 {
@@ -169,6 +176,23 @@ ul.pagination li.current a {
   }
 }
 
+.opac-hvr {
+  display: block;
+  img {
+    -webkit-transition: opacity 0.5s;
+     -moz-transition: opacity 0.5s;
+     -ms-transition: opacity 0.5s;
+     -o-transition: opacity 0.5s;
+     transition: opacity 0.5s; 
+
+    &:hover, &:focus {
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80)0.8;
+      opacity: 0.8;
+    }
+  }
+}
+
 /* =====================================
    Page Styles
    ===================================== */
@@ -211,6 +235,20 @@ ul.pagination li.current a {
 .banner-it {
   background: url(../img/banner8.png) no-repeat center center;
   background-size: cover;
+}
+
+.support {
+  img {
+    margin-bottom: 1em;
+  }
+
+  li a:last-of-type {
+    font-size: .9em;
+  }
+}
+
+.projects {
+  @extend .support;
 }
 
 /* ==========================================================================
