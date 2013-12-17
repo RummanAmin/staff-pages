@@ -5097,6 +5097,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "BlissPro-Heavy",Impact,sans-serif;
   color: #56524e;
   margin-bottom: .2em; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #56524e; }
+    h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus {
+      color: #e2001a; }
 
 h2 {
   text-transform: uppercase; }
@@ -5181,7 +5185,27 @@ ul.pagination li.current a {
 .blog .row {
   box-shadow: 0px 1px 8px 1px #e4e4e4;
   border: 1px #e4e4e4 solid;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  padding: 0; }
+  .blog .row .columns:first-of-type {
+    padding: 0; }
+  .blog .row .columns:last-of-type {
+    padding-top: .5em; }
+.blog p.right {
+  margin-bottom: 0; }
+
+.opac-hvr {
+  display: block; }
+  .opac-hvr img {
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .opac-hvr img:hover, .opac-hvr img:focus {
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80) 0.8;
+      opacity: 0.8; }
 
 /* =====================================
    Page Styles
@@ -5217,6 +5241,11 @@ ul.pagination li.current a {
 .banner-it {
   background: url(../img/banner8.png) no-repeat center center;
   background-size: cover; }
+
+.support img, .projects img {
+  margin-bottom: 1em; }
+.support li a:last-of-type, .projects li a:last-of-type {
+  font-size: .9em; }
 
 /* ==========================================================================
    Media Queries for Responsive Design
