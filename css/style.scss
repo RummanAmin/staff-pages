@@ -18,6 +18,17 @@ $secondary: #a7a7a7; /*Light Grey*/
 $tertiary: #e2001a; /*Red*/
 $quaternary: #A30006; /*Burgundy*/
 $quinary: #d2d2d2; /*Lightish Grey*/
+$panel: #d9d9d9;
+
+// Mixing
+@mixin alt-a {
+  a {
+    color: $primary;
+    &:hover, &:focus {
+      color: $tertiary;
+    }
+  }
+}
 
 /* =====================================
    Site Styles
@@ -36,12 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   color: $primary;
   margin-bottom: .2em;
 
-  a {
-    color: $primary;
-    &:hover, &:focus {
-      color: $tertiary;
-    }
-  }
+  @include alt-a;  
 }
 
 h2 {
@@ -71,6 +77,11 @@ h4.subheader {
 .subheader {
   font: 18px/26px "Lucida Grande",Helvetica,Arial,sans-serif;
   color: $secondary;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
 }
 
 .top {
@@ -158,10 +169,10 @@ ul.pagination li.current a {
 
 .blog {
   .row {
-    box-shadow: 0px 1px 8px 1px #e4e4e4;
-    border: 1px #e4e4e4 solid;
-    margin-bottom: 1.5em;
-    padding: 0;
+    
+    border-bottom: 1px #e4e4e4 solid;
+    padding: 0 0 1em;
+
     .columns {
       &:first-of-type {
         padding: 0;
@@ -169,6 +180,13 @@ ul.pagination li.current a {
       &:last-of-type {
         padding-top: .5em;
       }
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
     }
   }
   p.right {
@@ -237,6 +255,84 @@ ul.pagination li.current a {
   background-size: cover;
 }
 
+.recent-comments {
+  padding-top: 0;
+  .row {
+    padding-top: 0;
+    .columns {
+      padding-right: 0;
+      &:last-of-type {
+        p:first-of-type {
+          margin-bottom: 0.3em;
+          font-style: italic;
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+.recent-updates {
+  padding-top: 0;
+  @include alt-a;
+  li {
+    padding: .8em 0 .3em;
+    border-bottom: 1px solid $panel;
+    p {
+      margin: 0;
+    }
+  }
+
+  span {
+    font-size: 2em;
+    line-height: .5;
+  }
+}
+
+#accordion {
+  border: 0;
+
+  .title {
+    background: $primary;
+    border-left: 0;
+    border-right: 0;
+    a {
+      color: #fff;
+    }
+  }
+
+  .content {
+    background: $panel;
+    border: 0;
+    p {
+      margin-bottom: 0;
+      display: inline;
+    }
+
+    .row:last-of-type {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    span {
+      color: #000;
+    }
+  }
+}
+
+.about-sections {
+  .row {
+    .columns {
+      &:first-of-type {
+        padding: 0;
+      }
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .support {
   img {
     margin-bottom: 1em;
@@ -249,6 +345,28 @@ ul.pagination li.current a {
 
 .projects {
   @extend .support;
+}
+
+.forms {
+  .panel {
+    background: none;
+  }
+  
+
+  @include alt-a;
+
+  a {
+    background: $panel;
+    padding: .5em;
+  }
+}
+
+.directory {
+  li h5.subheader, li a:last-of-type {
+    font-size: .9em;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
 }
 
 /* ==========================================================================
@@ -317,6 +435,19 @@ ul.pagination li.current a {
         background: #fff;
         color: $tertiary;
       }
+  }
+
+  .blog {
+    .row {
+      box-shadow: 0px 1px 8px 1px #e4e4e4;
+      border: 1px #e4e4e4 solid;
+      margin-bottom: 1.5em;
+      padding: 0;
+
+      &:last-of-type {
+        border-bottom: inherit;
+      }
+    }
   }
 }
 

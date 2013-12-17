@@ -463,8 +463,8 @@ select {
     margin-right: 0; }
   .row .row {
     width: auto;
-    margin-left: -0.9375em;
-    margin-right: -0.9375em;
+    margin-left: -1.875em;
+    margin-right: -1.875em;
     margin-top: 0;
     margin-bottom: 0;
     max-width: none;
@@ -488,8 +488,8 @@ select {
 .column,
 .columns {
   position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 1.875em;
+  padding-right: 1.875em;
   width: 100%;
   float: left; }
 
@@ -497,8 +497,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+    padding-left: 1.875em;
+    padding-right: 1.875em;
     float: left; }
 
   .small-1 {
@@ -5123,6 +5123,10 @@ h4.subheader {
   font: 18px/26px "Lucida Grande",Helvetica,Arial,sans-serif;
   color: #a7a7a7; }
 
+img {
+  width: 100%;
+  max-width: 100%; }
+
 .top .row {
   padding: 0; }
 
@@ -5183,14 +5187,16 @@ ul.pagination li.current a {
   overflow: hidden; }
 
 .blog .row {
-  box-shadow: 0px 1px 8px 1px #e4e4e4;
-  border: 1px #e4e4e4 solid;
-  margin-bottom: 1.5em;
-  padding: 0; }
+  border-bottom: 1px #e4e4e4 solid;
+  padding: 0 0 1em; }
   .blog .row .columns:first-of-type {
     padding: 0; }
   .blog .row .columns:last-of-type {
     padding-top: .5em; }
+  .blog .row p:last-of-type {
+    margin-bottom: 0; }
+  .blog .row:last-of-type {
+    border-bottom: 0; }
 .blog p.right {
   margin-bottom: 0; }
 
@@ -5242,10 +5248,76 @@ ul.pagination li.current a {
   background: url(../img/banner8.png) no-repeat center center;
   background-size: cover; }
 
+.recent-comments {
+  padding-top: 0; }
+  .recent-comments .row {
+    padding-top: 0; }
+    .recent-comments .row .columns {
+      padding-right: 0; }
+      .recent-comments .row .columns:last-of-type p:first-of-type {
+        margin-bottom: 0.3em;
+        font-style: italic;
+        color: #a7a7a7; }
+
+.recent-updates {
+  padding-top: 0; }
+  .recent-updates a {
+    color: #56524e; }
+    .recent-updates a:hover, .recent-updates a:focus {
+      color: #e2001a; }
+  .recent-updates li {
+    padding: .8em 0 .3em;
+    border-bottom: 1px solid #d9d9d9; }
+    .recent-updates li p {
+      margin: 0; }
+  .recent-updates span {
+    font-size: 2em;
+    line-height: .5; }
+
+#accordion {
+  border: 0; }
+  #accordion .title {
+    background: #56524e;
+    border-left: 0;
+    border-right: 0; }
+    #accordion .title a {
+      color: #fff; }
+  #accordion .content {
+    background: #d9d9d9;
+    border: 0; }
+    #accordion .content p {
+      margin-bottom: 0;
+      display: inline; }
+    #accordion .content .row:last-of-type {
+      margin-top: 0;
+      padding-top: 0; }
+    #accordion .content span {
+      color: #000; }
+
+.about-sections .row .columns:first-of-type {
+  padding: 0; }
+.about-sections .row .columns p:last-of-type {
+  margin-bottom: 0; }
+
 .support img, .projects img {
   margin-bottom: 1em; }
 .support li a:last-of-type, .projects li a:last-of-type {
   font-size: .9em; }
+
+.forms .panel {
+  background: none; }
+.forms a {
+  color: #56524e; }
+  .forms a:hover, .forms a:focus {
+    color: #e2001a; }
+.forms a {
+  background: #d9d9d9;
+  padding: .5em; }
+
+.directory li h5.subheader, .directory li a:last-of-type {
+  font-size: .9em;
+  line-height: 1.55;
+  margin-bottom: 0; }
 
 /* ==========================================================================
    Media Queries for Responsive Design
@@ -5289,7 +5361,15 @@ ul.pagination li.current a {
     background: #fff; }
     .top-bar-section li a:not(.button):hover {
       background: #fff;
-      color: #e2001a; } }
+      color: #e2001a; }
+
+  .blog .row {
+    box-shadow: 0px 1px 8px 1px #e4e4e4;
+    border: 1px #e4e4e4 solid;
+    margin-bottom: 1.5em;
+    padding: 0; }
+    .blog .row:last-of-type {
+      border-bottom: inherit; } }
 /* ==========================================================================
    Fonts
    ========================================================================== */
