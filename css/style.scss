@@ -18,7 +18,7 @@ $secondary: #a7a7a7; /*Light Grey*/
 $tertiary: #e2001a; /*Red*/
 $quaternary: #A30006; /*Burgundy*/
 $quinary: #d2d2d2; /*Lightish Grey*/
-$panel: #d9d9d9;
+$panel: #f7f6f6;
 
 // Mixing
 @mixin alt-a {
@@ -105,11 +105,6 @@ img {
   }
 }
 
-.bottom {
-  background: #f7f6f6;
-  min-height: 250px;
-}
-
 .nav {
   margin: 2em auto;
   li a {
@@ -127,9 +122,13 @@ img {
 
 .top-bar-section {
   ul {
-    background: $primary;
+    background: $panel;
     li a {
       background: none;
+      color: $primary;
+      &:hover, &:focus {
+        background: $secondary;
+      }
     }
   }
 }
@@ -155,8 +154,14 @@ ul.pagination li.current a {
   }
 
 .footer {
-  background: $tertiary;
-  color: #fff;
+  border-bottom: 3px solid $tertiary;
+  text-align: center;
+  background: $panel;
+  h2 {
+    color: $secondary;
+    font-size: 1.5em;
+    text-transform: none;
+  }
 }
 
 .panel {
@@ -170,6 +175,10 @@ ul.pagination li.current a {
     overflow: hidden;
     margin-bottom: 1.5em;
     margin-top: 1em;
+
+    &:first-of-type {
+      background: $panel;
+    }
 
     .columns {
       padding-right: 0;
@@ -198,6 +207,14 @@ ul.pagination li.current a {
       opacity: 0.8;
     }
   }
+}
+
+.small-icons {
+  display: inline-block;
+  width: 25px;
+  margin-right: 5px;
+  overflow: hidden;
+  margin-bottom: -4px;
 }
 
 /* =====================================
@@ -313,10 +330,13 @@ ul.pagination li.current a {
   }
 }
 
-.about-sections {
-  padding: 0;
+#about-section {
+  padding-top: 0;
+  p {
+    font-style: normal;
+  }
   .recent-comments {
-    padding: 0;
+    padding-top: 0;
   }
   h4 {
     margin-top: 0;
@@ -349,7 +369,10 @@ ul.pagination li.current a {
 
   a {
     background: $panel;
-    padding: .5em;
+    padding: .5em .7em .6em;
+    span {
+      margin-right: .5em;
+    }
   }
 }
 
@@ -451,6 +474,13 @@ ul.pagination li.current a {
           padding-right: 0;
         }
       }
+    }
+  }
+
+  .footer {
+    padding: 2em;
+    h2 {
+      font-size: 2em;
     }
   }
 }

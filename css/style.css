@@ -5143,10 +5143,6 @@ img {
     width: 100%;
     font-family: "BlissPro-Light",Impact,sans-serif; }
 
-.bottom {
-  background: #f7f6f6;
-  min-height: 250px; }
-
 .nav {
   margin: 2em auto; }
   .nav li a {
@@ -5159,9 +5155,12 @@ img {
       color: #e2001a; }
 
 .top-bar-section ul {
-  background: #56524e; }
+  background: #f7f6f6; }
   .top-bar-section ul li a {
-    background: none; }
+    background: none;
+    color: #56524e; }
+    .top-bar-section ul li a:hover, .top-bar-section ul li a:focus {
+      background: #a7a7a7; }
 
 .button {
   border-width: 0px 0px 4px;
@@ -5179,8 +5178,13 @@ ul.pagination li.current a {
     cursor: pointer; }
 
 .footer {
-  background: #e2001a;
-  color: #fff; }
+  border-bottom: 3px solid #e2001a;
+  text-align: center;
+  background: #f7f6f6; }
+  .footer h2 {
+    color: #a7a7a7;
+    font-size: 1.5em;
+    text-transform: none; }
 
 .panel {
   overflow: hidden; }
@@ -5191,6 +5195,8 @@ ul.pagination li.current a {
   overflow: hidden;
   margin-bottom: 1.5em;
   margin-top: 1em; }
+  .blog .box:first-of-type {
+    background: #f7f6f6; }
   .blog .box .columns {
     padding-right: 0;
     padding-left: 0; }
@@ -5209,6 +5215,13 @@ ul.pagination li.current a {
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80) 0.8;
       opacity: 0.8; }
+
+.small-icons {
+  display: inline-block;
+  width: 25px;
+  margin-right: 5px;
+  overflow: hidden;
+  margin-bottom: -4px; }
 
 /* =====================================
    Page Styles
@@ -5262,7 +5275,7 @@ ul.pagination li.current a {
       color: #e2001a; }
   .recent-updates li {
     padding: .8em 0 .3em;
-    border-bottom: 1px solid #d9d9d9; }
+    border-bottom: 1px solid #f7f6f6; }
     .recent-updates li p {
       margin: 0; }
   .recent-updates span {
@@ -5278,7 +5291,7 @@ ul.pagination li.current a {
     #accordion .title a {
       color: #fff; }
   #accordion .content {
-    background: #d9d9d9;
+    background: #f7f6f6;
     border: 0; }
     #accordion .content p {
       margin-bottom: 0;
@@ -5289,11 +5302,13 @@ ul.pagination li.current a {
     #accordion .content span {
       color: #000; }
 
-.about-sections {
-  padding: 0; }
-  .about-sections .recent-comments {
-    padding: 0; }
-  .about-sections h4 {
+#about-section {
+  padding-top: 0; }
+  #about-section p {
+    font-style: normal; }
+  #about-section .recent-comments {
+    padding-top: 0; }
+  #about-section h4 {
     margin-top: 0;
     margin-bottom: .5em;
     line-height: .8; }
@@ -5310,8 +5325,10 @@ ul.pagination li.current a {
   .forms a:hover, .forms a:focus {
     color: #e2001a; }
 .forms a {
-  background: #d9d9d9;
-  padding: .5em; }
+  background: #f7f6f6;
+  padding: .5em .7em .6em; }
+  .forms a span {
+    margin-right: .5em; }
 
 .directory li h5.subheader, .directory li a:last-of-type {
   font-size: .9em;
@@ -5372,7 +5389,12 @@ ul.pagination li.current a {
       padding-right: 1em; }
 
   .recent-comments .row .columns:first-of-type {
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  .footer {
+    padding: 2em; }
+    .footer h2 {
+      font-size: 2em; } }
 /* ==========================================================================
    Fonts
    ========================================================================== */
