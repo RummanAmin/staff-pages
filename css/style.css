@@ -5217,7 +5217,7 @@ ul.pagination li.current a {
    Page Styles
    ===================================== */
 .banner-home {
-  background: url(../img/index/banner.jpg) no-repeat center center;
+  background: url(../img/index/banner2.jpg) no-repeat center center;
   background-size: cover; }
 
 .banner-about {
@@ -5244,7 +5244,7 @@ ul.pagination li.current a {
   background: url(../img/banner7.png) no-repeat center center;
   background-size: cover; }
 
-.banner-it {
+.banner-it, .banner-style {
   background: url(../img/banner8.png) no-repeat center center;
   background-size: cover; }
 
