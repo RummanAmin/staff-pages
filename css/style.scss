@@ -177,7 +177,7 @@ ul.pagination li.current a {
     margin-top: 1em;
 
     &:first-of-type {
-      background: $panel;
+      border-bottom: 2px solid $tertiary;
     }
 
     .columns {
@@ -458,6 +458,11 @@ ul.pagination li.current a {
       border: 1px #e4e4e4 solid;
       padding: 0;
 
+      &:first-of-type {
+        background: $panel;
+        border-bottom: none;
+      }
+
       &:last-of-type {
         border-bottom: inherit;
       }
@@ -478,7 +483,7 @@ ul.pagination li.current a {
   }
 
   .footer {
-    padding: 2em;
+    padding: 3em;
     h2 {
       font-size: 2em;
     }
