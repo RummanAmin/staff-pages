@@ -46,12 +46,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "BlissPro-Heavy",Impact,sans-serif;
   color: $primary;
   margin-bottom: .2em;
-
+  text-transform: capitalize;
   @include alt-a;  
-}
-
-h2 {
-  text-transform: uppercase;
 }
 
 h4 {
