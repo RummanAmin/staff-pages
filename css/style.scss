@@ -73,6 +73,7 @@ h4.subheader {
 .subheader {
   font: 18px/26px "Lucida Grande",Helvetica,Arial,sans-serif;
   color: $secondary;
+  text-transform: none;
 }
 
 img {
@@ -85,7 +86,6 @@ img {
     padding: 0;
   }
 }
-
 
 .row {
   padding: 1em 0;
@@ -164,29 +164,22 @@ ul.pagination li.current a {
 }
 
 .blog {
-  .row {
-    
+  .box {
     border-bottom: 1px #e4e4e4 solid;
     padding: 0 0 1em;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
 
     .columns {
-      &:first-of-type {
-        padding: 0;
-      }
+      padding-right: 0;
+      padding-left: 0;
       &:last-of-type {
-        padding-top: .5em;
+        p {
+          margin-bottom: 0;
+        }
       }
     }
-    p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    &:last-of-type {
-      border-bottom: 0;
-    }
-  }
-  p.right {
-    margin-bottom: 0;
   }
 }
 
@@ -252,16 +245,20 @@ ul.pagination li.current a {
 }
 
 .recent-comments {
-  padding-top: 0;
   .row {
-    padding-top: 0;
+    overflow: hidden;
     .columns {
-      padding-right: 0;
       &:last-of-type {
-        p:first-of-type {
-          margin-bottom: 0.3em;
-          font-style: italic;
-          color: $secondary;
+        p {
+          &:first-of-type {
+            margin-bottom: .5em;
+            color: $secondary;
+            font-style: italic;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -317,15 +314,14 @@ ul.pagination li.current a {
 }
 
 .about-sections {
-  .row {
-    .columns {
-      &:first-of-type {
-        padding: 0;
-      }
-      p:last-of-type {
-        margin-bottom: 0;
-      }
-    }
+  padding: 0;
+  .recent-comments {
+    padding: 0;
+  }
+  h4 {
+    margin-top: 0;
+    margin-bottom: .5em;
+    line-height: .8;
   }
 }
 
@@ -434,14 +430,26 @@ ul.pagination li.current a {
   }
 
   .blog {
-    .row {
+    .box {
       box-shadow: 0px 1px 8px 1px #e4e4e4;
       border: 1px #e4e4e4 solid;
-      margin-bottom: 1.5em;
       padding: 0;
 
       &:last-of-type {
         border-bottom: inherit;
+      }
+      .columns {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .recent-comments {
+    .row {
+      .columns {
+        &:first-of-type {
+          padding-right: 0;
+        }
       }
     }
   }
