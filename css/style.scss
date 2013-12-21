@@ -18,7 +18,7 @@ $secondary: #a7a7a7; /*Light Grey*/
 $tertiary: #e2001a; /*Red*/
 $quaternary: #A30006; /*Burgundy*/
 $quinary: #d2d2d2; /*Lightish Grey*/
-$panel: #d9d9d9;
+$panel: #f7f6f6;
 
 // Mixing
 @mixin alt-a {
@@ -46,12 +46,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "BlissPro-Heavy",Impact,sans-serif;
   color: $primary;
   margin-bottom: .2em;
-
+  text-transform: capitalize;
   @include alt-a;  
-}
-
-h2 {
-  text-transform: uppercase;
 }
 
 h4 {
@@ -77,6 +73,7 @@ h4.subheader {
 .subheader {
   font: 18px/26px "Lucida Grande",Helvetica,Arial,sans-serif;
   color: $secondary;
+  text-transform: none;
 }
 
 img {
@@ -89,7 +86,6 @@ img {
     padding: 0;
   }
 }
-
 
 .row {
   padding: 1em 0;
@@ -109,11 +105,6 @@ img {
   }
 }
 
-.bottom {
-  background: #f7f6f6;
-  min-height: 250px;
-}
-
 .nav {
   margin: 2em auto;
   li a {
@@ -131,9 +122,13 @@ img {
 
 .top-bar-section {
   ul {
-    background: $primary;
+    background: $panel;
     li a {
       background: none;
+      color: $primary;
+      &:hover, &:focus {
+        background: $secondary;
+      }
     }
   }
 }
@@ -159,8 +154,14 @@ ul.pagination li.current a {
   }
 
 .footer {
-  background: $tertiary;
-  color: #fff;
+  border-bottom: 3px solid $tertiary;
+  text-align: center;
+  background: $panel;
+  h2 {
+    color: $secondary;
+    font-size: 1.5em;
+    text-transform: none;
+  }
 }
 
 .panel {
@@ -168,29 +169,26 @@ ul.pagination li.current a {
 }
 
 .blog {
-  .row {
-    
+  .box {
     border-bottom: 1px #e4e4e4 solid;
     padding: 0 0 1em;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+
+    &:first-of-type {
+      border-bottom: 2px solid $tertiary;
+    }
 
     .columns {
-      &:first-of-type {
-        padding: 0;
-      }
+      padding-right: 0;
+      padding-left: 0;
       &:last-of-type {
-        padding-top: .5em;
+        p {
+          margin-bottom: 0;
+        }
       }
     }
-    p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    &:last-of-type {
-      border-bottom: 0;
-    }
-  }
-  p.right {
-    margin-bottom: 0;
   }
 }
 
@@ -211,12 +209,20 @@ ul.pagination li.current a {
   }
 }
 
+.small-icons {
+  display: inline-block;
+  width: 25px;
+  margin-right: 5px;
+  overflow: hidden;
+  margin-bottom: -4px;
+}
+
 /* =====================================
    Page Styles
    ===================================== */
 
 .banner-home {
-  background: url(../img/index/banner.jpg) no-repeat center center;
+  background: url(../img/index/banner2.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -250,22 +256,26 @@ ul.pagination li.current a {
   background-size: cover;
 }
 
-.banner-it {
+.banner-it, .banner-style {
   background: url(../img/banner8.png) no-repeat center center;
   background-size: cover;
 }
 
 .recent-comments {
-  padding-top: 0;
   .row {
-    padding-top: 0;
+    overflow: hidden;
     .columns {
-      padding-right: 0;
       &:last-of-type {
-        p:first-of-type {
-          margin-bottom: 0.3em;
-          font-style: italic;
-          color: $secondary;
+        p {
+          &:first-of-type {
+            margin-bottom: .5em;
+            color: $secondary;
+            font-style: italic;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -320,16 +330,18 @@ ul.pagination li.current a {
   }
 }
 
-.about-sections {
-  .row {
-    .columns {
-      &:first-of-type {
-        padding: 0;
-      }
-      p:last-of-type {
-        margin-bottom: 0;
-      }
-    }
+#about-section {
+  padding-top: 0;
+  p {
+    font-style: normal;
+  }
+  .recent-comments {
+    padding-top: 0;
+  }
+  h4 {
+    margin-top: 0;
+    margin-bottom: .5em;
+    line-height: .8;
   }
 }
 
@@ -357,7 +369,10 @@ ul.pagination li.current a {
 
   a {
     background: $panel;
-    padding: .5em;
+    padding: .5em .7em .6em;
+    span {
+      margin-right: .5em;
+    }
   }
 }
 
@@ -438,15 +453,39 @@ ul.pagination li.current a {
   }
 
   .blog {
-    .row {
+    .box {
       box-shadow: 0px 1px 8px 1px #e4e4e4;
       border: 1px #e4e4e4 solid;
-      margin-bottom: 1.5em;
       padding: 0;
+
+      &:first-of-type {
+        background: $panel;
+        border-bottom: none;
+      }
 
       &:last-of-type {
         border-bottom: inherit;
       }
+      .columns {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .recent-comments {
+    .row {
+      .columns {
+        &:first-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 3em;
+    h2 {
+      font-size: 2em;
     }
   }
 }
