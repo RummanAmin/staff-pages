@@ -20,7 +20,7 @@ $quaternary: #A30006; /*Burgundy*/
 $quinary: #d2d2d2; /*Lightish Grey*/
 $panel: #f7f6f6;
 
-// Mixing
+// Mixins
 @mixin alt-a {
   a {
     color: $primary;
@@ -46,7 +46,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "BlissPro-Heavy",Impact,sans-serif;
   color: $primary;
   margin-bottom: .2em;
-  text-transform: capitalize;
   @include alt-a;  
 }
 
@@ -109,13 +108,17 @@ img {
   margin: 2em auto;
   li a {
     padding: .8em;
-    background: rgba(255, 255, 255, 0.85);
-    color: $tertiary;
-    font-family: "BlissPro-Bold",Impact,sans-serif;
+    background: #fff;
+    color: $primary;
 
     &:hover, &:focus {
       background: #fff;
       color: $tertiary;
+    }
+
+    span {
+      font-size: 2em;
+      line-height: .6;
     }
   }
 }
@@ -425,23 +428,23 @@ ul.pagination li.current a {
   position: relative;
   overflow: hidden;
   
-    &:hover {
-      &:before {
-        left: 90%;
-      }
-    }
+    // &:hover {
+    //   &:before {
+    //     left: 90%;
+    //   }
+    // }
 
-    &:before {
-    position: absolute;
-    font-size: 125%;
-    line-height: 2.9;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    left: 130%;
-    top: 0;
-    content: url(../img/arrow-staff.png);
-    }
+    // &:before {
+    // position: absolute;
+    // font-size: 125%;
+    // line-height: 2.9;
+    // -webkit-transition: all 0.3s;
+    // -moz-transition: all 0.3s;
+    // transition: all 0.3s;
+    // left: 130%;
+    // top: 0;
+    // content: url(../img/arrow-staff.png);
+    // }
   }
 
   .top-bar {
